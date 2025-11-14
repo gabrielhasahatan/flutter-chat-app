@@ -56,19 +56,19 @@ class _RegisterViewState extends State<RegisterView> {
                             onPressed: () {
                               Get.back();
                             },
-                            icon: Icon(Icons.arrow_back_ios_new_outlined),
+                            icon: const Icon(Icons.arrow_back_ios_new_outlined),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 25,
                           ),
-                          Text(
+                          const Text(
                             "Daftar akun",
                             style: TextStyle(
                                 fontSize: 30, fontWeight: FontWeight.bold),
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       const Center(
@@ -270,6 +270,9 @@ class _RegisterViewState extends State<RegisterView> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text("Sudah Punya punya akun?"),
+                          SizedBox(
+                            width: 8,
+                          ),
                           GestureDetector(
                             onTap: () => Get.offAllNamed(AppRoutes.login),
                             child: Text(

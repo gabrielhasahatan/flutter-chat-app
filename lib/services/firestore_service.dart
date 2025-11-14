@@ -47,4 +47,20 @@ class FirestoreService {
       throw Exception("Gagal hapus user : ${e.toString()}");
     }
   }
+
+  Stream<UserModel?> getUserStream(String userId) {
+    return _firestore
+        .collection('users')
+        .doc(userId)
+        .snapshots()
+        .map((doc) => doc.exists ? UserModel.fromMap(doc.data()!) : null);
+  }
+
+  Future<void> updateUser(UserModel user) async {
+      await _firestore.collection('users').doc(user.id).update(user.toMap());
+    try {
+    } catch (e) {
+      throw Exception("Gagal update user");
+    }
+  }
 }

@@ -21,7 +21,7 @@ class _MainViewState extends State<MainView> {
           Text("MY MAIN"),
           TextButton(
               onPressed: () async {
-                _authService.signOut();
+                _authService.signOut(); 
               },
               child: Text("LOGOUT"))
         ],
